@@ -19,7 +19,8 @@ public class PasswordChecker {
 		 if (correctLength(password)&&upperCase(password)&&lowerCase(password)&&exclamation(password)) {
 	            System.out.println("Password valid and accepted");
 	        } else {
-	            System.out.println("Error");
+	            System.out.println();
+	            main(args);
 	        }
 		 scnr.close();
 	}
@@ -30,6 +31,7 @@ public class PasswordChecker {
 		int min = 7;
 		int max = 12;
 		if (password.length() < min || password.length() > max) {
+			System.out.println("Error. Password does not fit length requirements");
 			return false;
 		} else {
 			return true;
@@ -44,6 +46,7 @@ public class PasswordChecker {
 			return true;
 		} 
 	} 
+		System.out.println("Error. Password requires at least one upper case character");
 		return false;
 	}
 	//Checks for lower case
@@ -55,6 +58,7 @@ public class PasswordChecker {
 				return true;
 			} 
 		} 
+		System.out.println("Error. Password requires at least one lower case character");
 		return false;
 	}
 	//Checks for !
@@ -63,6 +67,7 @@ public class PasswordChecker {
 			if (password.contains("!")) {
 				return true;
 		} 
+		System.out.println("Error. Password requires special character: !");
 		return false;
 	}
 	
